@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <style>
+            button{
+                background-color: black;
+                color:white;
+                border-radius: 20px;
+                padding:10px;
+                margin-right: 10px;
+                margin-top:10px
+            }
+
+            .operatori{
+                display:flex;
+            }
+        </style>
+
+    <script>
+        window.onload = gestoreLoad;
+
+        
+
+        function gestoreLoad() {
+            let result=document.getElementById("result");
+            let btnSomma = document.getElementById("btnSomma");
+
+            btnSomma.onclick = somma;
+
+            function somma() {
+                //poiche sono stringhe faccio parse
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                // alert("la somma dei numeri è " + (n1 + n2));
+                result.textContent = "La somma dei numeri è " + (n1 + n2);
+
+
+            }
+            let btnDifferenza = document.getElementById("btnDifferenza");
+
+            btnDifferenza.onclick = sottrazione;
+
+            function sottrazione() {
+                //poiche sono stringhe faccio parse
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                // alert("la differenza dei numeri è " + (n1 - n2));
+                result.textContent = "La differenza dei numeri è " + (n1 - n2);
+
+
+            }
+            let btnMoltiplicazione = document.getElementById("btnMoltiplicazione");
+            btnMoltiplicazione.onclick = moltiplicazione;
+
+            function moltiplicazione() {
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                // alert("la moltiplicazione dei numeri  è " + (n1 * n2));
+                result.textContent = "La moltiplicazione dei numeri è " + (n1 * n2);
+               
+
+
+            }
+
+
+
+            let btnDivisione = document.getElementById("btnDivisione");
+
+            btnDivisione.onclick = divisione;
+            function divisione() {
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                // alert("la moltiplicazione dei numeri  è " + (n1 / n2));
+                result.textContent = "La divisione dei numeri è " + (n1 / n2);
+
+
+
+            }
+
+
+            let btnModulo = document.getElementById("btnModulo");
+
+            btnModulo.onclick = modulo;
+
+            function modulo() {
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                // alert("la moltiplicazione dei numeri  è " + (n1 % n2));
+                result.textContent = "Il modulo dei numeri è " + (n1 % n2);
+
+            }
+
+
+            let btnResetta = document.getElementById("btnResetta");
+
+            btnResetta.addEventListener("click", () => {
+
+                // Resetto i valori degli input
+                document.getElementById("n1").value = "";
+                document.getElementById("n2").value = "";
+            }
+            )
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <label for=""> Inserisci il primo numero </label>
+        <input type="number" id="n1"> <br>
+        <label for=""> Inserisci il secondo numero </label>
+        <input type="number" id="n2"> <br>
+ <div class="operatori">
+
+    <button id="btnSomma">Somma</button> <br>
+
+    <button id="btnDifferenza">Differenza</button> <br>
+
+    <button id="btnMoltiplicazione">Moltiplicazione</button> <br>
+
+    <button id="btnDivisione">Divisione</button> <br>
+    <button id="btnModulo">Modulo </button> <br>
+
+    <br><br>
+    <button id="btnResetta">Resetta campi</button>
+
+ </div>
+
+        
+
+        <div id="result"></div>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
